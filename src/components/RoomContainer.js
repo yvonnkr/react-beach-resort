@@ -11,7 +11,6 @@ function RoomContainer({ context }) {
   }
   return (
     <Fragment>
-      <h2>hello from Rooms Container</h2>
       <RoomFilter rooms={rooms} />
       <RoomList rooms={sortedRooms} />
     </Fragment>
