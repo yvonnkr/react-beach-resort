@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import items from './data';
 import Client from './Contentful';
 
-// Client.getEntries({
-//   content_type: 'beachResortRoom'
-// })
-//   .then(response => console.log(response.items))
-//   .catch(console.error);
-
 const RoomContext = React.createContext();
 
 class RoomProvider extends Component {
@@ -28,6 +22,7 @@ class RoomProvider extends Component {
   };
 
   //getData from contentful
+  /** 
   getData = async () => {
     try {
       let response = await Client.getEntries({
@@ -57,9 +52,10 @@ class RoomProvider extends Component {
     this.getData();
   }
 
-  /** Using local data
+  */
+
+  // Using local data
   componentDidMount() {
-    
     let rooms = this.formatData(items);
     let featuredRooms = rooms.filter(room => room.featured === true);
     let maxPrice = Math.max(...rooms.map(item => item.price));
@@ -75,7 +71,6 @@ class RoomProvider extends Component {
       maxSize
     });
   }
-   */
 
   formatData(items) {
     let tempItems = items.map(item => {
